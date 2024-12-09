@@ -1,0 +1,17 @@
+メモ書き
+    //対象があるか探す
+    今回は id product_code
+
+    取得できる
+    document.getElementById("product_code");
+
+    placeholderを消す
+    inputElement.placeholder = "";
+
+    value に　[連番] 文字を入れる
+    inputElement.value = "[連番]";
+
+
+
+
+
