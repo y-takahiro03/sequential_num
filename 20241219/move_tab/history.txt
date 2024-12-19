@@ -1,0 +1,83 @@
+
+12/09
+    対象があるか探す
+    id product_code
+
+    取得できる
+    document.getElementById("product_code");
+
+    placeholderを消す
+    inputElement.placeholder = "";
+
+    value に　[連番] 文字を入れる
+    inputElement.value = "[連番]";
+
+12/10
+  // placeholderは常に 連番の値がはいっている
+
+  valueに値がないなら、[連番]の文字を入れる
+    →　出来た
+
+
+在庫場所・棚
+  選択肢にデフォルトで表示するものを指定したい
+
+  オプションタグにselected 属性を追加する
+  <select>
+    <option selected></option>
+  </select>
+
+クラスかid探し中
+<span class="custom-combobox"><input title="" class="custom-combobox-input ui-widget ui-widget-content ui-state-default ui-corner-left ui-autocomplete-input" autocomplete="off" data-original-title=""><span role="status" aria-live="polite" class="ui-helper-hidden-accessible">3002 results are available, use up and down arrow keys to navigate.</span><a tabindex="-1" data-original-title="" title="" class="custom-combobox-toggle ui-corner-right"></a></span>
+
+<select name="stock_place_location" class="form-control combobox " style="display: none;" input_type="master" master_ctg="stocklocation" data-selected="" data-name="">
+<option value="" category="">--</option>
+<option label="【本社】仮棚" value="1|1" category="">【本社】仮棚</option>
+<option label="【本社】A00001" value="1|A00001" category="">【本社】A00001</option>
+<option label="【本社】A00002" value="1|A00002" category="">【本社】A00002</option>
+<option label="【本社】A00003" value="1|A00003" category="">【本社】A00003</option>
+<option label="【本社】A00004" value="1|A00004" category="">【本社】A00004</option>【本社】K343" value="1|K343" category="">【本社】K343</option>
+</select>
+
+<input title="" class="custom-combobox-input ui-widget ui-widget-content ui-state-default ui-corner-left ui-autocomplete-input" autocomplete="off" data-original-title="">
+
+id や class が割り振られていない 困った
+  document.querySelector()に条件をつけることで出来そう
+
+  selectの取得はできた。
+  const newElement = document.querySelector('select[name="stock_place_location"]');
+
+12/11 
+  select の取得はできたがデフォルト値を設定することができない。
+
+  gemini の参考
+  select のデフォルトには使えないかもしれないが、tab選択のtabindexを割り振るときに使えそう
+  document.querySelector で 該当すinputタグを全て取得して、地道に tabindex を振ろうと考えていたけど、
+  ある程度、範囲を指定できたら、負担が軽そうじゃない。
+  const inputs = document.querySelectorAll('div p + input');このコードでは、div要素内のp要素の次のinput要素を取得し、2番目の要素に20という値を設定しています。
+  inputs[1].value = '20';
+
+  このコードでは、div要素内のp要素の次のinput要素を取得し、2番目の要素に20という値を設定しています。
+
+  後日に同じ感じのinputタグを作ってデフォルトに設定できるか試す。　
+  selected を optionタグに指定するだけで出来そうだけど WSはオリジナルのスタイルのあてかたをしてるかも。
+  
+
+12/12 
+  selectの選択肢を固定にする方は、WSがオリジナルでスタイルを充てているかもしれないから一旦保留。
+  自分の環境でselectedで文字列を固定できたら、直すかも。
+  document.querySelectorAll()に条件をつけて必要なインプットタグを順番に取得できるか試す。
+
+12/16
+  id name 属性が分かるものにたいしてCSSをあてる
+  割り振られていないものは、class custom-combobox-input
+  を全て取り出して、適切なtabindexをあてる。
+
+
+12/18
+  家で試したら、一般的なinputタグには実装したいことはできた。
+  オリジナルCSSが適用されている状態を開発者モードで確認する
+
+  Sources < Page < Top < .... < 各種css
+   
+  

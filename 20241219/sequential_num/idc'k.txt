@@ -1,0 +1,19 @@
+ブランド:token-input-cnd_multiple_select_product_detail27
+ブランド手入力:product_detail308
+デザイン:product_detail32
+表記サイズ手入力:product_detail309
+型番:product_detail41
+カタログから引用:maker_product_code_request_button
+シリアル:product_detail43
+対象:name product_detail34
+備考1:product_detail240
+カラー1:product_detail52
+ゆうパケット:product_detail306
+仕入れ価格:product_detail5
+販売価格:price02
+即決価格:product_detail304
+登録日:product_detail24
+公開・非公開: name status
+
+inputタグにある data-original-title の属性が邪魔？
+この属性消せば、在庫場所・棚のデフォルト指定ができるかも。
